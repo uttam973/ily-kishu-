@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The real me </title>
+    <title>The real me!</title>
     <style>
         * {
             margin: 0;
@@ -139,7 +139,7 @@
         <p id="mainText">I really messed up, and I feel terrible for making you feel this way. You mean the absolute world to me, and making you smile is my favorite thing to do. Can you forgive me?</p>
         
         <div class="btn-group" id="btnGroup">
-            <button class="yes-btn" onclick="forgiveMe()">I Forgive You 💕</button>
+            <button class="yes-btn" id="yesBtn" onclick="forgiveMe()">I Forgive You 💕</button>
             <button class="no-btn" id="noBtn" onmouseover="dodgeBtn()" onclick="dodgeBtn()">Still Mad 😤</button>
         </div>
     </div>
@@ -153,9 +153,14 @@
             textElement.innerText = "YAY! 🎉 Thank you my love! I promise to make it up to you with lots of hugs, kisses, and your favorite snacks! I love you so much! ❤️";
             textElement.classList.add('response-style');
             
-            // Hide the buttons after forgiveness
-            document.getElementById('btnGroup').style.display = 'none';
+            // Update button text to "I Love You Too ❤️"
+            const yesBtn = document.getElementById('yesBtn');
+            yesBtn.innerText = "I Love You Too ❤️";
             
+            // Hide the "Still Mad" button
+            document.getElementById('noBtn').style.display = 'none';
+            
+            // Pop floating hearts
             for (let i = 0; i < 15; i++) {
                 createPopHeart();
             }
@@ -193,138 +198,3 @@
     </script>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm So Sorry, kishu ❤️</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ffe6e9 0%, #f0d3f7 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 40px 30px;
-            max-width: 480px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(220, 120, 150, 0.2);
-            border: 2px solid #fff;
-            position: relative;
-        }
-
-        .bear-avatar {
-            font-size: 80px;
-            animation: bounce 2s infinite ease-in-out;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        h1 {
-            color: #d63384;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #555;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            min-height: 60px;
-        }
-
-        button {
-            padding: 12px 28px;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .yes-btn {
-            background-color: #ff4b72;
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 75, 114, 0.4);
-        }
-
-        .yes-btn:hover {
-            transform: scale(1.08);
-            background-color: #e03a5f;
-        }
-
-        .no-btn {
-            background-color: #e0e0e0;
-            color: #666;
-            position: relative;
-        }
-
-        .response-message {
-            display: none;
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #fff0f3;
-            border-radius: 16px;
-            border: 1px dashed #ff4b72;
-            color: #d63384;
-            font-weight: 600;
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Floating background hearts */
-        .heart {
-            position: absolute;
-            color: rgba(255, 105, 180, 0.3);
-            font-size: 20px;
-            animation: float 6s infinite linear;
-            z-index: -1;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- ? -->
-</html> -->
